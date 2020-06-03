@@ -5,200 +5,314 @@
 ### Data structures
 
 #### What is the purpose of a list (array in some programming languages) data structure? Name some methods of it!
-Collection which is ordered, changeable, allows duplicate members. Methods: .append(), .count(), .sort()
-(link : https://www.programiz.com/python-programming/methods/list)
+collection which is ordered, changeable, allows duplicate members
+append() >> adds an element at the end of the list
+clear() >> removes all the elements from the list
+copy() >> returns a copy of the list
+count() >> returns the number of elements with the specified value
+extend() >> add the elements of a list(or any iterable), to the end of the current list
+index() >> returns the index of the first element with the specified value
+insert() >> adds an element at the specified position
+pop() >> removes the element at the specified position
+remove() >> removes the first item with the specified value
+reverse() >> reverses the order of the list
+sort() >> sorts the list
+#### What is the difference between a list/array and a set?
+set: cannot have multiple occurences of the same element, unordered
+list/array: ordered, can have multiple occurences of the same element
+#### What is the purpose and methods of a dictionary/map data structure?
+A set of key:value pairs, keys:unique
+storing a value with some key and extracting the value given key
+unordered collection, changeable and indexed. no duplicate keys
+clear() >>remove all the elements from the dict.
+copy() >> returns a copy of the dict.
+fromkeys() >> returns a dict. with the specified keys and value
+get() >> returns the value of the specified key
+items() >> returns a list containing a tuple for each key value pair
+keys() >> return a list containing the dict.'s keys
+pop() >> removes the element with the specified key
+popitem() >> removes the last inserted key-value pair
+setdefault() returns the value of the specified key
+	if the key does not exist: insert the key with the specified value
+update() >> updates the dict with the specified key-value pairs
+values() >> return a list of all the values in the dict
 
-
-#### What is the difference between a list and a set?
-
-SET: A set is a collection which is unordered and unindexed, and doesnt allow duplicates. Python, sets are written with curly brackets.
-LIST: A list is a collection which is ordered and changeable. In Python lists are written with square brackets.
-
-
-#### What is the purpose and methods of a map data structure?
-
-MAP: Python map() function is used to apply a function on all the elements of specified iterable and return map object. Python map object is an iterator, so we can iterate over its elements. We can also convert map object to sequence objects such as list, tuple etc. using their factory functions.
-EXAMPLE: map(function, iterable, ...)
-
-A map (also known as dictionary or associative array) is not a data structure. It is an abstract data type: an interface that specifies what operations can be performed, but not how these operations are implemented.A map stores a collection of (key,value) pairs, such that each possible key appears at most once in the collection. The operations supported by a map are to store a new (key,value) pair, or to look up the value that is associated with a certain key.
-
+map: stores key,value pairs, no multiple ocuurences in the collection
+map == dict
+abstract data type
 
 ### Algorithms
 
 #### Fibonacci sequences. Write a method (or pseudo code), that generates the Fibonacci sequences.
-
-EXAMPLE: The next number is found by adding up the two numbers before it: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
-
-def Fibonacci(n):
-    if n<0:
-        print("Incorrect input")
-    # First Fibonacci number is 0
-    elif n==0:
-        return 0
-    # Second Fibonacci number is 1
-    elif n==1:
-        return 1
-    else:
-        return Fibonacci(n-1)+Fibonacci(n-2)
-
+nums = 0,1,1,2,3,5,8......
+new_num = adding up the previous 2 nums
+def fibonacci(n):
+	if n<0:
+		print('wrong input')
+	elif n ==0:
+		return 0
+	elif n ==1:
+		return 1
+	else:
+		return fibonacci(n-1)+fibonacci(n-2)
 
 #### How do you find a max value in a list/array if you can’t use any built-in functions?
-
-lst = [1,9,6,5,4,...]
-max = 0
+e.g. 
+lst = [1,9,7,3,-2]
+max=0
 for i in lst:
     if i > max:
         max = i
-print(max)
+return max
 
 #### How do you find the average of values in a list/array if you can’t use any built-in functions?
-<pre><code>
 lst = [1,9,7,3,2]
 n = 0
 count = 0
 for i in lst:
-    n = n+i
-    count += 1
+	n = n+i
+	count += 1
 average = n/count
 return average
-</code></pre>
 #### What do we call an *in-place* sort?
-
 An in-place sorting algorithm uses constant extra space for producing the output (modifies the given list only). It sorts the list only by modifying the order of the elements within the list.
-
+> modify the list order
 #### Explain an algorithm which sorts a list!
-BUBBLE SORT:It is a comparison-based algorithm in which each pair of adjacent elements is compared and the elements are swapped if they are not in order.
-
 list = [19,2,31,45,6,11,121,27]
-bubblesort(list)
-print(list)
-
-[2, 6, 11, 19, 27, 31, 45, 121]
+def bubblesort(lst):
+    for num in range(len(list)-1,0,-1):
+        for index in range(num):
+            if list[index]>list[index+1]:
+                temp = list[index]
+                list[index] = list[index+1]
+                list[index+1] = temp
+bubblesort(lst)
+print(lst)
 
 ### Programming paradigms - procedural
 
 #### What is the call stack?
-https://dev.to/theoutlander/implementing-the-stack-data-structure-in-javascript-4164
-
-- Last in first out (LIFO) 
-- In stack, a new element is added at one end and an element is removed from that end only. The insert and delete operations are often called push and pop.
+call stack: is what a program uses to keep track of function calls. The call stack is made up of stack frames - one for each function call.
 #### What is “Stack overflow”?
-An undesirable condition in which a particular computer program tries to use more memory space than the call stack has aviable.
+1. an undesirable condition in which a particular computer program tries to use more memory space than the call stack has aviable.
+2. a large, trusted online community for developers to learn, share their programming knowledge.
 #### What are the main parts of a function?
-
-def random(arg1, arg2): # function signature (function name,paramater list)
-    x = arg1+ arg2 # function body
-    return x
+header: begins with a keyword, ends with a colon
+body:consisting of one or more Python statements, each indented the same amount from the header.
 
 ### Programming languages - Python  
 #### How do you use a dictionary in Python?
-A dictionary is a collection which is unordered, changeable and indexed. In Python dictionaries are written with curly brackets, and they have keys and values.
-
-Dictionaries and lists share the following characteristics:
-
-- Both are mutable.
-- Both are dynamic. They can grow and shrink as needed.
-- Both can be nested. A list can contain another list. A dictionary can contain another dictionary. A dictionary can also - contain a list, and vice versa.
-
-Dictionaries differ from lists primarily in how elements are accessed:
-
-- List elements are accessed by their position in the list, via indexing.
-- Dictionary elements are accessed via keys.
-
+dictname={'key': value}
+var = dictname.get('key')
+dictname['key'] = newvalue
+dictname.values()
+dictname.keys()
+e.g. for k, v in dictname.items():
+	print(k,v)
+dictname['addkey'] = addvalue
+del dictname['key'] > removes item
+dictname.pop('key') > removes item
+dictname.popitem() > removes last inserted item
+dictname = dict(key1='value1', key2='value2')
 #### What does it mean that an object is immutable in Python?
-
-In simple words, an immutable object can’t be changed after it is created.
-
-int, float, bool, string, unicode, tuple
-
+after created it cant't be changed, only reassigned
+e.g. bool, int, float, tuple, str
 #### What is conditional expression in Python?
-
-Ternary operators also known as conditional expressions are operators that evaluate something based on a condition being true or false.
-
-It simply allows to test a condition in a single line replacing the multiline if-else making the code compact.
-
-<pre><code>print ("Both a and b are equal" if a == b else "a is greater than b"
-        if a > b else "b is greater than a") 
-</code></pre>
-Above approach can be written as:
-<pre><code>
-if a != b: 
-    if a > b: 
-        print("a is greater than b") 
-    else: 
-        print("b is greater than a") 
-else: 
-    print("Both a and b are equal")
-</code></pre>    
-
+expression that returns value A or B depending on wether a Boolean value is true or false
+operators that evaluate sg based on a contition being true or false
 #### What are different types of arguments in Python?
-##### Defeault argument:
-
+default arg. >> default value
+keyword arg. >> values get assigned to the arg.s according to their position
+arbitary / variable-length arg. >> *before parameter name, when we don't know in advance the number of arg.s
 #### What is variable shadowing? (context: variable scope)
+when a variable declared within a certain scope has the same name as a var. declared in an outer scope
 #### What can happen if you try to delete/drop/add an item from a List, while you are iterating over it in Python?
-#### What is the "golden rule" of variable scoping in Python (context: LEGB)? What is the lifetime of variables?
+e.g. list = [2, 3, 4], iterating in list range len , try to remove 2, > index error 
+the length of the range and the lenght of the list not equal anymore
+#### What is the "golden rule" of variable, scoping in Python (context: LEGB)? What is the lifetime of variables?
+var. scope: the part of the program where the var. is accessible
+var lifetime: the duration for which the var. exists
+local var.: accessible from the point it is defined - until the end of the func., exist: as lon as the func.is executing
+use global var. only if intended to us eglobally
+LEGB: Local, Enclosing, Global, Built-in
+Local: in func.
+Enclosing: only for nested func.s
+Global: global
+Built-in: when run script, open interactive session > keywords, func.s, exceptions, etc.
+Python searches L->B., if isn't found > error
+> write self-contained func.s that rely on local names rather than global ones. Try to use unique object names, no matter what scope you're in. Avoid global name modifications and cross-module name modifications. Use global names as constants.
 #### If you need to access the iterator variable after a for loop, how would you do it in Python?
+save the value of it in a variable/list. Better if I don't need to.
 #### What type of elements can a list contain in Python?
+numeric types, text sequence
 #### What is slice operator in Python and how to use?
+slice(start, stop, step) >> slice a sequent
 #### What arithmetic operators (+,*,-,/) can be used on lists in Python? What do they do?
++,- > add/substract one list to the other e.g. lst1= [1,2] lst2 = [3,4] lst3 = lst1 + lst2 
 #### What is the purpose of the in and not in membership operators in Python?
+test for membership in a sequence.
+in: evaulates to True if it finds a var. in the specified sequence, False otherwise.
+not in: evaluates to True if it does not finds a var. in the specified sequence, False otherwise.
 #### What does the + operator mean when used with strings in Python?
+e.g. str1 = 'abc' str2='def' str1+str2 = 'abcdef'
 #### Explain f strings in Python?
+formatted string literal / f-string
+may contain replecament fields > expressions delimited by curly braces >> {}
+formatted strings are really expressions evaulated at run time
+the parts of the string outside curly braces are treated literally
 #### Name 4 iterable types in Python!
+list, tuple, string, dictionary, set
 #### What is the difference between list/set/dictionary comprehension and a generator expression in Python?
+generator: size of the object is smaller, type of resulting values: generator. cannot access an element by index.
+e.g. g = (n*2 for n in range(1000))
+both: can iterate over
 #### Does the order of the function definitions matter in Python? Why?
+yes; Python can't find a name that just doesn't exist yet > e.g. row1: def print_sum(a,b):
+	print(sum_nums(a,b)) and sum_nums defined in row4 > name error
 #### What does unpacking mean in Python?
+* > unpack the list >>all elements of it can be passed as different parameters
+e.g. def func(a, b, c, d):
+	print(a, b, c, d)
+lst = [1, 2, 3, 4]
+func(*lst)
+>>> (1, 2, 3, 4)
+** for dicts
+> can give a list for args. in a func.
 #### What happens when you try to assign the result of a function which has no return statement to a variable in Python?
+you get none
 
 ## Software engineering
 
 ### Debugging
 
 #### What techniques can you use while debugging a program in Python?
+debugger, print, rubber duck >explain code line-by-line
 #### What does step over, step into and step out mean while using the debugger?
+step over: step to the next
+step into: step into the func., step out: step out from the func.
 #### How can you start to debug a program from a certain line using the debugger?
+put down a breakpoint to that line
 
 ### Version control
 
 #### What are the advantages of using a version control system?
+it's a way of stroring informaton about changes in code > keep track of every modification to the code, including the person responsible for it and precise time
 #### What is the difference between the working directory, the staging area and the repository in git?
+working dir. >git add > staging area > git commit >repo
+working dir: where you currently working. if you not save sg you will lose it > 'untracked' area of git
+staging area: where git starts tracking and saving changes that occur in files
+repo: all of your checkpoints or commits. this area saves everything
 #### What are remote repositories in git?
+remote repo.s: versions of your project that are hosted on the internet or network somewhere
 #### Why does a merge conflict occur?
+git cannot automatically determinate what is correct beacuse: 2people have chaned the same lines in a file / A deleted a file while while B was modifying it / not start merging if git sees there are changes in the working dir or staging area of the current project >pending changes could be written over by the commits that are being merged
 #### Through what series of commands could you put a new file into a remote repository connected to your existing local repository?
+git add, git commit, git push
 #### What does it mean atomic commits and descriptive commit messages?
+atomic: one fix or feature
+descriptive: short 50 chars or less summary of changes; one blank line; a detailed explanatory text if neccessary(72 char)
 #### What’s the difference between git and GitHub?
+git: version control software
+github: git repo. hosting server which offers all the source code management provided in git. > where you upload your git repo.
 
 ## Software design
 
 ### Clean code
 
 #### What does clean code mean?
+writing readable and sustainable code
+in the code there aren't: dead code; unneccesary or not used things, comments; func.s that do more than the name says; badly named func.s, var.s, etc; 
+DRY: don't repeat yourself
+naming things well, using naming conventions
+being consistent
+general rules: follow standars conventions; keep it simple stupid; leave the campground cleaner than you found it; always look for the root cause of a problem
+name things properly; DRY; SRP(single responsibility principle); write modular code; avoid global var.s; avoid too many indentation levels; avoid too long func.s; write self-documenting code
 #### What steps do we usually do during a clean code refactoring?
+check for, rewrite/fix: 
+bad names
+bad formattings
+repeated codes
+long methods
+wrong comment usage
+dead code
+magic numbers
 
 ### Error handling
 
 #### What is exception handling?
+handling exceptions>an event which occurs during the execution of a program that disrupts the normal flow of the program instructions.
+when the script encounters a situation that it cannot cope > raises an exeption > it must be handled, else it terminates and quits
 #### What are the basics of exception handling in Python?
+try: block, except: statement, followed by a block of code
+syntax errors, runtime errors, logival errors
 #### In which case should we catch an exception? Why?
+if we know that a particular section of our program is likely to cause an error, so we can tell what to do when it happens instead of letting the error crash our program. We can intercept it, do sg about it and allow the program to continue
 #### What can/should we do with an exception in the ‘except’ block?
+a code which handles the problem as elegantly as possible
+e.g. except IOError: print('Error: cannot find file or read data')
 #### What does the else and finally statement do in a try-except block in Python?
+else:optional, when present must follow all except clauses. useful for code that must be executed if the try clause does not raise exception
+finally: optional, define clean-up actions that must be executed under all circumstances. the finally clause execute as the last task before the try statement completes. it runs whether or not the try statement produces an exeption
 
 ## Software Development Methodologies
 
 #### What is the main goal of a retrospective meeting?
+to evaulate the past working cycle and define actions that may fix or improve things identified as negative
 
 ## Programming environment
 
 ### Unix
 
 #### What is UNIX and what is Linux?
+Unix: operating system, written in C. Allows quick modification, acceptance and portability. Proprietary operating system. Woks on CLI (Command Line Interface). created in the late 1960s at AT&T Bell Labs.
+Linux: operating system. Software which enables applications and the users to access the devices on the computer to perform some specific function. Linux OS relays instructions from an application from the computer's processor and sends the result back to the application via the Linus OS. Free and open source software collaboration. Built by Linus Torvalds at the University of Helsinki in 1991.
+
+difference: 
+Linux-Open Source <>Unix: the versions primarily developed by AT&T, 
+Linux: portable and is booted from a USB Stick <> Unix: not portable, 
+Linux:OS can be installed on various types of devices like mobile, tablet, computers <> Unix: OS is used for inernet servers, workstations & PCs
+Linux: the source code is aviable to the general public <> Unix: source code is not aviable to anyone
+-> Linux:source code is aviable to the general public <> Unix: source code is proprietary
+Linux is a clone of Unix
+Linux default shell is BASH <> Unix shell is Bourne Shell
+Linux threat detection and solution are very fast <> Unix users require longer wait times to get the proper bug fixing patch
+Important versions of Linux:Redhat, Ubuntu, OpenSuse, Solaris <> Unix: HP-UX, AIS, BSD, etc.
 #### What do we call the shell in Linux?
+is a program that takes commands from the keyboard and gives them to the operating system to perform. Command line interface(CLIs). On most Linux systems a program called BASH acts as the shell program. other shell programs:ksh, tcsh, zsh
 #### What does root means in a Linux environment?
+root: the user name or account that by default has access to all commands and files on a Linux OS. Also referred as the root account, root user and superuser.
 #### How do you access your personal files in Linux?
 #### How can you install an application in Linux?
+sudo apt install appname(e.g. inkspace) in Ububtu
+Fedora:instead of apt> dnf; OpenSUSE: yzpper; Debian: apt; Slackware: sbopkg; FreeBSD: pkg_add; OpenIndiana: pkg
+(sudo apt search e.g.pyqt > sudo apt install e.g.python-qt5)
 #### What is package management in Linux, what are repositories?
+apt:(advanced packaging tool); > installing, upgrading software packages, updading of the package list index, upgradging the entire Ubuntu system
+e.g.: sudo apt install nmap > install nmap package; sudo apt remove nmap > remove nmap package; sudo apt update >update package index; sudo apt upgrade > upgrade packages
+repo.s: collection of packages found online or on physical media
 #### How do you navigate in the filesystem with the command line?
+pwd:>print working directory. show which dir. you're located 
+ls: list files in current dir.
+cd: change dir.s. 
+cd/ navigate into the root dir.
+cd or cd~ navigate to home dir.
+cd .. navigate up one dir. level
+cd - navigate to the previous dir.
+mv: move a file to a different location or rename a file
 #### What does the following commands do: mkdir, rm, cat, cp, touch?
-#### How can you look up what does a command do in Linux if you have no internet connection?
+mkdir: make directories
+rm: remove files or directories
+cat: concatenate and print files / create the file with content
+cp: copy files and directories
+touch: create file without any content. > empty file
+#### How can you look up what does a command do in Linux if you have no internet connectionli?
+man page > man man
 #### What does the following commands do: head, tail, more, less?
-#### How do you download a file from internet using the terminal?
+head: print the top N number of data of the given input.  by default - first 10 lines
+tail: output the last part of files
+more: file perusal filter for crt viewing. filter for paging text one screenful at a time
+less: opposite of more. 
+#### How do s download a file from internet using the terminal?
+wget "copy_url_here"
+wget -P location "url">> downloed to the current dir.
+wget -O location/NewFileName "url">> download to desktop
