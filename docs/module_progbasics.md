@@ -52,7 +52,7 @@ for i in lst:
 print(max)
 
 #### How do you find the average of values in a list/array if you can’t use any built-in functions?
-
+<pre><code>
 lst = [1,9,7,3,2]
 n = 0
 count = 0
@@ -61,7 +61,7 @@ for i in lst:
     count += 1
 average = n/count
 return average
-
+</code></pre>
 #### What do we call an *in-place* sort?
 
 An in-place sorting algorithm uses constant extra space for producing the output (modifies the given list only). It sorts the list only by modifying the order of the elements within the list.
@@ -79,6 +79,9 @@ print(list)
 
 #### What is the call stack?
 https://dev.to/theoutlander/implementing-the-stack-data-structure-in-javascript-4164
+
+- Last in first out (LIFO) 
+- In stack, a new element is added at one end and an element is removed from that end only. The insert and delete operations are often called push and pop.
 #### What is “Stack overflow”?
 An undesirable condition in which a particular computer program tries to use more memory space than the call stack has aviable.
 #### What are the main parts of a function?
@@ -89,9 +92,48 @@ def random(arg1, arg2): # function signature (function name,paramater list)
 
 ### Programming languages - Python  
 #### How do you use a dictionary in Python?
+A dictionary is a collection which is unordered, changeable and indexed. In Python dictionaries are written with curly brackets, and they have keys and values.
+
+Dictionaries and lists share the following characteristics:
+
+- Both are mutable.
+- Both are dynamic. They can grow and shrink as needed.
+- Both can be nested. A list can contain another list. A dictionary can contain another dictionary. A dictionary can also - contain a list, and vice versa.
+
+Dictionaries differ from lists primarily in how elements are accessed:
+
+- List elements are accessed by their position in the list, via indexing.
+- Dictionary elements are accessed via keys.
+
 #### What does it mean that an object is immutable in Python?
+
+In simple words, an immutable object can’t be changed after it is created.
+
+int, float, bool, string, unicode, tuple
+
 #### What is conditional expression in Python?
+
+Ternary operators also known as conditional expressions are operators that evaluate something based on a condition being true or false.
+
+It simply allows to test a condition in a single line replacing the multiline if-else making the code compact.
+
+<pre><code>print ("Both a and b are equal" if a == b else "a is greater than b"
+        if a > b else "b is greater than a") 
+</code></pre>
+Above approach can be written as:
+<pre><code>
+if a != b: 
+    if a > b: 
+        print("a is greater than b") 
+    else: 
+        print("b is greater than a") 
+else: 
+    print("Both a and b are equal")
+</code></pre>    
+
 #### What are different types of arguments in Python?
+##### Defeault argument:
+
 #### What is variable shadowing? (context: variable scope)
 #### What can happen if you try to delete/drop/add an item from a List, while you are iterating over it in Python?
 #### What is the "golden rule" of variable scoping in Python (context: LEGB)? What is the lifetime of variables?
