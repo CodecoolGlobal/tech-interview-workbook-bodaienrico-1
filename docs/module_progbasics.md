@@ -1,7 +1,7 @@
 # Programming Basics questions
-================================
+==
 ## Computer science
---------------------------------
+--
 ### Data structures
 
 #### What is the purpose of a list (array in some programming languages) data structure? Name some methods of it!
