@@ -1,22 +1,22 @@
 # Programming Basics questions
-
+================================
 ## Computer science
-
+--------------------------------
 ### Data structures
 
 #### What is the purpose of a list (array in some programming languages) data structure? Name some methods of it!
 collection which is ordered, changeable, allows duplicate members
-append() >> adds an element at the end of the list
-clear() >> removes all the elements from the list
-copy() >> returns a copy of the list
-count() >> returns the number of elements with the specified value
-extend() >> add the elements of a list(or any iterable), to the end of the current list
-index() >> returns the index of the first element with the specified value
-insert() >> adds an element at the specified position
-pop() >> removes the element at the specified position
-remove() >> removes the first item with the specified value
-reverse() >> reverses the order of the list
-sort() >> sorts the list
+>append() >> adds an element at the end of the list
+>clear() >> removes all the elements from the list
+>copy() >> returns a copy of the list
+>count() >> returns the number of elements with the specified value
+>extend() >> add the elements of a list(or any iterable), to the end of the current list
+>index() >> returns the index of the first element with the specified value
+>insert() >> adds an element at the specified position
+>pop() >> removes the element at the specified position
+>remove() >> removes the first item with the specified value
+>reverse() >> reverses the order of the list
+>sort() >> sorts the list
 #### What is the difference between a list/array and a set?
 set: cannot have multiple occurences of the same element, unordered
 list/array: ordered, can have multiple occurences of the same element
@@ -264,7 +264,7 @@ to evaulate the past working cycle and define actions that may fix or improve th
 ### Unix
 
 #### What is UNIX and what is Linux?
-Unix: operating system, written in C. Allows quick modification, acceptance and portability. Proprietary operating system. Woks on CLI (Command Line Interface). created in the late 1960s at AT&T Bell Labs.
+Unix: operating system, written in C. Allows quick modification, acceptance and portability. Proprietary operating system. Works on CLI (Command Line Interface). created in the late 1960s at AT&T Bell Labs.
 Linux: operating system. Software which enables applications and the users to access the devices on the computer to perform some specific function. Linux OS relays instructions from an application from the computer's processor and sends the result back to the application via the Linus OS. Free and open source software collaboration. Built by Linus Torvalds at the University of Helsinki in 1991.
 
 difference: 
