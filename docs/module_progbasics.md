@@ -55,7 +55,8 @@ print(result)
 ### Algorithms
 
 #### Fibonacci sequences. Write a method (or pseudo code), that generates the Fibonacci sequences.
-[source](https://www.mathsisfun.com/numbers/fibonacci-sequence.html)[source](https://www.geeksforgeeks.org/python-program-for-program-for-fibonacci-numbers-2/)
+[source](https://www.mathsisfun.com/numbers/fibonacci-sequence.html)
+>[source](https://www.geeksforgeeks.org/python-program-for-program-for-fibonacci-numbers-2/)
 
 xn = xn−1 + xn−2
 
