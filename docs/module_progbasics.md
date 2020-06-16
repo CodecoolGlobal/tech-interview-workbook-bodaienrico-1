@@ -44,120 +44,157 @@ collection which is ordered, changeable, allows duplicate members
 [source](https://www.geeksforgeeks.org/python-map-function/)
 
 _A map (also known as dictionary or associative array) is **not a data structure**. It is an abstract data type: an interface that specifies what operations can be performed, but not how these operations are implemented. A map stores a collection of (key,value) pairs, such that each possible key appears at most once in the collection. The operations supported by a map are to store a new (key,value) pair, or to look up the value that is associated with a certain key._
+```python
+def calculateSquare(n):
+	return n*n
 
-`def calculateSquare(n):`
-`	return n*n`
-
-`numbers = (1, 2, 3, 4)`
-`result = map(calculateSquare, numbers)`
-`print(result)`
-
+numbers = (1, 2, 3, 4)
+result = map(calculateSquare, numbers)
+print(result)
+```
 ### Algorithms
 
 #### Fibonacci sequences. Write a method (or pseudo code), that generates the Fibonacci sequences.
-nums = 0,1,1,2,3,5,8......
-new_num = adding up the previous 2 nums
-def fibonacci(n):
-	if n<0:
-		print('wrong input')
-	elif n ==0:
-		return 0
-	elif n ==1:
-		return 1
-	else:
-		return fibonacci(n-1)+fibonacci(n-2)
+[source](https://www.mathsisfun.com/numbers/fibonacci-sequence.html)[source](https://www.geeksforgeeks.org/python-program-for-program-for-fibonacci-numbers-2/)
+
+xn = xn−1 + xn−2
+
+```python
+def Fibonacci(n):
+    if n<0:
+        print("Incorrect input")
+    elif n==0:
+        return 0
+    elif n==1:
+        return 1
+    else:
+        return Fibonacci(n-1)+Fibonacci(n-2)
+```		
 
 #### How do you find a max value in a list/array if you can’t use any built-in functions?
-e.g. 
-lst = [1,9,7,3,-2]
-max=0
-for i in lst:
-    if i > max:
-        max = i
-return max
+1. sort method
+2. print the last element in a list
+```python
+def find_max():
+    lst = [1, 9, 7, 3, - 2]
+    max = 0
+    for i in lst:
+        if i > max:
+            max = i
+    return max
+```	
 
 #### How do you find the average of values in a list/array if you can’t use any built-in functions?
-lst = [1,9,7,3,2]
-n = 0
-count = 0
-for i in lst:
-	n = n+i
-	count += 1
-average = n/count
-return average
+1. add elements to eachother
+2. count them with a variable
+3. add divide them by a variable
+```python
+def find_avg():
+    lst = [1, 9, 7, 3, - 2]
+    count = 0
+    sum = 0
+    for i in lst:
+        count += 1
+        sum = sum  + i
+    avg = sum/count
+    return avg
+```	
+
 #### What do we call an *in-place* sort?
 An in-place sorting algorithm uses constant extra space for producing the output (modifies the given list only). It sorts the list only by modifying the order of the elements within the list.
-> modify the list order
+
 #### Explain an algorithm which sorts a list!
-list = [19,2,31,45,6,11,121,27]
+
+[source](https://www.tutorialspoint.com/python_data_structure/python_sorting_algorithms.htm)
+
+1. **Bubble sort**:_sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm, which is a comparison sort, is named for the way smaller or larger elements "bubble" to the top of the list._
+```python
+lst = [19,2,31,45,6,11,121,27]
 def bubblesort(lst):
-    for num in range(len(list)-1,0,-1):
+    for num in range(len(lst)-1,0,-1):
         for index in range(num):
-            if list[index]>list[index+1]:
-                temp = list[index]
-                list[index] = list[index+1]
-                list[index+1] = temp
+            if lst[index]>lst[index+1]:
+                temp = lst[index]
+                lst[index] = lst[index+1]
+                lst[index+1] = temp
 bubblesort(lst)
 print(lst)
+```
 
 ### Programming paradigms - procedural
 
 #### What is the call stack?
 call stack: is what a program uses to keep track of function calls. The call stack is made up of stack frames - one for each function call.
+![ ](https://camo.githubusercontent.com/e83d69b5c62679df5aeaaaf7f13a02a90f29b5f4/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f70726163746963616c6465762f696d6167652f66657463682f732d2d733151626c3847662d2d2f635f6c696d6974253243665f6175746f253243666c5f70726f6772657373697665253243715f6175746f253243775f3838302f68747470733a2f2f74686570726163746963616c6465762e73332e616d617a6f6e6177732e636f6d2f692f6d776377726530397331327671613367766c37612e706e67)
 #### What is “Stack overflow”?
-1. an undesirable condition in which a particular computer program tries to use more memory space than the call stack has aviable.
-2. a large, trusted online community for developers to learn, share their programming knowledge.
+error type
+>
+_In software, a stack overflow occurs if the call stack pointer exceeds the stack bound. The call stack may consist of a limited amount of address space, often determined at the start of the program. The size of the call stack depends on many factors, including the programming language, machine architecture, multi-threading, and amount of available memory. When a program attempts to use more space than is available on the call stack (that is, when it attempts to access memory beyond the call stack's bounds, which is essentially a buffer overflow), the stack is said to overflow, typically resulting in a program crash. fe: recursive function never quit._
 #### What are the main parts of a function?
-header: begins with a keyword, ends with a colon
-body:consisting of one or more Python statements, each indented the same amount from the header.
+```python
+def random(arg1, arg2): # function signature(function name,paramater list)
+    multiply = arg1+ arg2 # function body
+    return multiply
+```	
 
 ### Programming languages - Python  
 #### How do you use a dictionary in Python?
-dictname={'key': value}
-var = dictname.get('key')
-dictname['key'] = newvalue
-dictname.values()
-dictname.keys()
-e.g. for k, v in dictname.items():
-	print(k,v)
-dictname['addkey'] = addvalue
-del dictname['key'] > removes item
-dictname.pop('key') > removes item
-dictname.popitem() > removes last inserted item
-dictname = dict(key1='value1', key2='value2')
+[source](https://www.w3schools.com/python/python_dictionaries.asp)
+
+_A dictionary is a collection which is unordered, changeable and indexed. In Python dictionaries are written with curly brackets, and they have keys and values._ dict_name = {key:value, ... keyN:valueN}
 #### What does it mean that an object is immutable in Python?
-after created it cant't be changed, only reassigned
-e.g. bool, int, float, tuple, str
+_These are of in-built types like int, float, bool, string, unicode, tuple. An immutable object can't be changed after it is created._
 #### What is conditional expression in Python?
 expression that returns value A or B depending on wether a Boolean value is true or false
-operators that evaluate sg based on a contition being true or false
+>
+Ternary operators also known as conditional expressions are operators that evaluate something based on a condition being true or false. Details: value_if_true if statement else value_if_false
+
 #### What are different types of arguments in Python?
-default arg. >> default value
-keyword arg. >> values get assigned to the arg.s according to their position
-arbitary / variable-length arg. >> *before parameter name, when we don't know in advance the number of arg.s
+[source](http://www.trytoprogram.com/python-programming/python-function-arguments/)
+1. **Default Arguments**: _def sum(a=4, b=2):_
+2. **Keyword Arguments**: *def print_name(name1, name2): print_name(name2 = 'John',name1 = 'Gary')*
+3. **Variable-length Arguments**: _def display(*name, **address): display('john','Mary','Nina',John='LA',Mary='NY',Nina='DC') *(args) - Arguents, **(KWargs) (Key Word Arguments)_
 #### What is variable shadowing? (context: variable scope)
-when a variable declared within a certain scope has the same name as a var. declared in an outer scope
+In computer programming, variable shadowing occurs when a variable declared within a certain scope (decision block, method, or inner class) has the same name as a variable declared in an outer scope. At the level of identifiers (names, rather than variables), this is known as name masking.
+>
+_(It's defined as when a variable "hides" another variable with the same name. So, when variable shadowing occurs, there are two or more variables with the same name, and their definitions are dependent on their scope (meaning their values may be different depending upon scope)._
 #### What can happen if you try to delete/drop/add an item from a List, while you are iterating over it in Python?
-e.g. list = [2, 3, 4], iterating in list range len , try to remove 2, > index error 
-the length of the range and the lenght of the list not equal anymore
+[source](https://www.quora.com/In-Python-why-cant-you-remove-elements-from-a-list-with-a-for-loop-but-you-can-with-a-while-loop)
+>
+_When we delete an item from the list the for loop will be skip some element, because we changed the list(indexing). When we add an item to the list the for loop will be forever running._
 #### What is the "golden rule" of variable, scoping in Python (context: LEGB)? What is the lifetime of variables?
-var. scope: the part of the program where the var. is accessible
-var lifetime: the duration for which the var. exists
-local var.: accessible from the point it is defined - until the end of the func., exist: as lon as the func.is executing
-use global var. only if intended to us eglobally
-LEGB: Local, Enclosing, Global, Built-in
-Local: in func.
-Enclosing: only for nested func.s
-Global: global
-Built-in: when run script, open interactive session > keywords, func.s, exceptions, etc.
-Python searches L->B., if isn't found > error
-> write self-contained func.s that rely on local names rather than global ones. Try to use unique object names, no matter what scope you're in. Avoid global name modifications and cross-module name modifications. Use global names as constants.
+[source](https://www.geeksforgeeks.org/scope-resolution-in-python-legb-rule/)
+In Python, the LEGB rule is used to decide the order in which the namespaces are to be searched for scope resolution. The scopes are listed below in terms of hierarchy (highest to lowest/narrowest to broadest):
+>1. **Local(L)**: _Defined inside function/class_
+>2. **Enclosed(E)**: _Defined inside enclosing functions(Nested function concept)_
+>3. **Global(G)**: _Defined at the uppermost/global level._
+>4. **Built-in(B)**: _Reserved names in Python builtin modules_
 #### If you need to access the iterator variable after a for loop, how would you do it in Python?
-save the value of it in a variable/list. Better if I don't need to.
+[source](https://realpython.com/python-for-loop/)
+
+Never your it after **NEVER**
+**iterator type:**
+1. **String**: _iter('foobar')_
+2. **List**: _iter(['foo', 'bar', 'baz'])_
+3. **Tuple** _iter(('foo', 'bar', 'baz'))_
+4. **Set** _iter({'foo', 'bar', 'baz'})_
+5. **Dict** _iter({'foo': 1, 'bar': 2, 'baz': 3})_
+>
+**Can't be iterator:**
+1. **Integer** _iter(42) TypeError: 'int' object is not iterable_
+2. **Float** _iter(3.1) TypeError: 'float' object is not iterable_
+3. **Built-in function** _iter(len) TypeError: 'builtin_function_or_method' object is not iterable_
 #### What type of elements can a list contain in Python?
-numeric types, text sequence
+Each item in a python list can be of any data type. fe: string, numbers, list, tuple, dict
 #### What is slice operator in Python and how to use?
-slice(start, stop, step) >> slice a sequent
+[source](https://www.w3schools.com/python/ref_func_slice.asp)
+The **slice()** function returns a slice object. _slice(start, end, step)_
+```python
+a[start:stop:step]
+a[slice(start, stop, step)]
+```
+>
+**list slicing**: list: listname[0:2] [:4] [1:-1] [:]
 #### What arithmetic operators (+,*,-,/) can be used on lists in Python? What do they do?
 +,- > add/substract one list to the other e.g. lst1= [1,2] lst2 = [3,4] lst3 = lst1 + lst2 
 #### What is the purpose of the in and not in membership operators in Python?
