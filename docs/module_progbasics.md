@@ -40,25 +40,17 @@ collection which is ordered, changeable, allows duplicate members
 >
 >list vs set: duplication, order, index
 #### What is the purpose and methods of a dictionary/map data structure?
-A set of key:value pairs, keys:unique
-storing a value with some key and extracting the value given key
-unordered collection, changeable and indexed. no duplicate keys
-clear() >>remove all the elements from the dict.
-copy() >> returns a copy of the dict.
-fromkeys() >> returns a dict. with the specified keys and value
-get() >> returns the value of the specified key
-items() >> returns a list containing a tuple for each key value pair
-keys() >> return a list containing the dict.'s keys
-pop() >> removes the element with the specified key
-popitem() >> removes the last inserted key-value pair
-setdefault() returns the value of the specified key
-	if the key does not exist: insert the key with the specified value
-update() >> updates the dict with the specified key-value pairs
-values() >> return a list of all the values in the dict
 
-map: stores key,value pairs, no multiple ocuurences in the collection
-map == dict
-abstract data type
+[source](https://www.geeksforgeeks.org/python-map-function/)
+
+_A map (also known as dictionary or associative array) is **not a data structure**. It is an abstract data type: an interface that specifies what operations can be performed, but not how these operations are implemented. A map stores a collection of (key,value) pairs, such that each possible key appears at most once in the collection. The operations supported by a map are to store a new (key,value) pair, or to look up the value that is associated with a certain key._
+
+`def calculateSquare(n):
+  return n*n
+
+numbers = (1, 2, 3, 4)
+result = map(calculateSquare, numbers)
+print(result)`
 
 ### Algorithms
 
