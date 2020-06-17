@@ -328,7 +328,7 @@ If there is no return statement (or just a return without an argument), an impli
 #### What is the difference between the working directory, the staging area and the repository in git?
 [source](http://archaeogeek.github.io/foss4gukdontbeafraid/git/stages.html) [source](https://medium.com/@lucasmaurer/git-gud-the-working-tree-staging-area-and-local-repo-a1f0f4822018)
 >
-[](https://camo.githubusercontent.com/805666f761f7fa28ea2622d278e45229060b53df/68747470733a2f2f6e65757261746873626f61742e626c6f672f706f73742f6769742d696e74726f2f66656174757265642e706e67)
+![ ](https://camo.githubusercontent.com/805666f761f7fa28ea2622d278e45229060b53df/68747470733a2f2f6e65757261746873626f61742e626c6f672f706f73742f6769742d696e74726f2f66656174757265642e706e67)
 >
 #### What are remote repositories in git?
 [source](https://www.git-tower.com/learn/git/ebook/en/command-line/remote-repositories/introduction)
