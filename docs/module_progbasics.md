@@ -446,20 +446,20 @@ The Debian package management system, based on a tool called dpkg with the very 
 >
 #### How do you navigate in the filesystem with the command line?
 >
-1. pwd: find your “present working directory”
-2. ls: see the files in your current directory
-3. cd: change your current directory
-    i. To navigate into the root directory, use cd /
-    ii. To navigate to your home directory, use cd or cd~
-    iii. To navigate up one directory level, use cd ..
-    iv. To navigate to the previous directory (or back), use cd -
+1. **pwd**: find your “present working directory”
+2. **ls**: see the files in your current directory
+3. **cd**: change your current directory
+    1. To navigate into the root directory, use cd /
+    2. To navigate to your home directory, use cd or cd~
+    3. To navigate up one directory level, use cd ..
+    4. To navigate to the previous directory (or back), use cd -
 >    
 #### What does the following commands do: mkdir, rm, cat, cp, touch?
 >
 [source](https://www.softwaretestinghelp.com/unix-file-system-commands/)
 >
 1. **mkdir**: Make directory
-2. **rm**: Remove files and directories ```python rm -r (recursive) -f (force) file_or_dir_name```. It is useful, when you wanna remove a non-empty directory.
+2. **rm**: Remove files and directories ```rm -r (recursive) -f (force) file_or_dir_name```. It is useful, when you wanna remove a non-empty directory.
 3. **cat**: Concatenate files and print to stdout.
 4. **cp**: Copy files
 5. **touch**: Create a new file or update its timestamp.
