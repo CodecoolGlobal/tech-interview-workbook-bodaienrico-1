@@ -55,7 +55,7 @@ print(result)
 ### Algorithms
 
 #### Fibonacci sequences. Write a method (or pseudo code), that generates the Fibonacci sequences.
-[source](https://www.mathsisfun.com/numbers/fibonacci-sequence.html)
+>[source](https://www.mathsisfun.com/numbers/fibonacci-sequence.html)
 >[source](https://www.geeksforgeeks.org/python-program-for-program-for-fibonacci-numbers-2/)
 
 xn = xn−1 + xn−2
@@ -174,6 +174,7 @@ In Python, the LEGB rule is used to decide the order in which the namespaces are
 [source](https://realpython.com/python-for-loop/)
 
 Never your it after **NEVER**
+>
 **iterator type:**
 1. **String**: _iter('foobar')_
 2. **List**: _iter(['foo', 'bar', 'baz'])_
@@ -189,6 +190,7 @@ Never your it after **NEVER**
 Each item in a python list can be of any data type. fe: string, numbers, list, tuple, dict
 #### What is slice operator in Python and how to use?
 [source](https://www.w3schools.com/python/ref_func_slice.asp)
+>
 The **slice()** function returns a slice object. _slice(start, end, step)_
 ```python
 a[start:stop:step]
@@ -197,73 +199,162 @@ a[slice(start, stop, step)]
 >
 **list slicing**: list: listname[0:2] [:4] [1:-1] [:]
 #### What arithmetic operators (+,*,-,/) can be used on lists in Python? What do they do?
-+,- > add/substract one list to the other e.g. lst1= [1,2] lst2 = [3,4] lst3 = lst1 + lst2 
+[source](https://www.programiz.com/python-programming/operators)
+>
+```python
+NumList1 = [10, 20, 30]
+NumList2 = [5, 2, 3]
+add = []
+sub = []
+multi = []
+div = []
+mod = []
+expo = []
+
+for j in range(3):
+    add.append( NumList1[j] + NumList2[j])
+    sub.append( NumList1[j] - NumList2[j])
+    multi.append( NumList1[j] * NumList2[j])
+    div.append( NumList1[j] / NumList2[j])
+    mod.append( NumList1[j] % NumList2[j])
+    expo.append( NumList1[j] ** NumList2[j])
+
+print("\nThe List Items after Addition =  ", add)
+print("The List Items after Subtraction =  ", sub)
+print("The List Items after Multiplication =  ", multi)
+print("The List Items after Division =  ", div)
+print("The List Items after Modulus =  ", mod)
+print("The List Items after Exponent =  ", expo)
+
+output:
+The List Items after Addition =   [15, 22, 33]
+The List Items after Subtraction =   [5, 18, 27]
+The List Items after Multiplication =   [50, 40, 90]
+The List Items after Division =   [2.0, 10.0, 10.0]
+The List Items after Modulus =   [0, 0, 0]
+The List Items after Exponent =   [100000, 400, 27000]
+```
 #### What is the purpose of the in and not in membership operators in Python?
-test for membership in a sequence.
-in: evaulates to True if it finds a var. in the specified sequence, False otherwise.
-not in: evaluates to True if it does not finds a var. in the specified sequence, False otherwise.
+[source](https://www.geeksforgeeks.org/python-membership-identity-operators-not-not/)
+>
+Membership operators are operators used to validate the membership of a value. It test for membership in a sequence, such as strings, lists, or tuples.
+>
+**in operator** : _The ‘in’ operator is used to check if a value exists in a sequence or not. Evaluates to true if it finds a variable in the specified sequence and false otherwise._
+>
+**‘not in’ operator**: _Evaluates to true if it does not finds a variable in the specified sequence and false otherwise._
+>
+
 #### What does the + operator mean when used with strings in Python?
-e.g. str1 = 'abc' str2='def' str1+str2 = 'abcdef'
+to explicitly concatenate the strings
+>
+fe: "spam" + "eggs" spameggs
 #### Explain f strings in Python?
-formatted string literal / f-string
-may contain replecament fields > expressions delimited by curly braces >> {}
-formatted strings are really expressions evaulated at run time
-the parts of the string outside curly braces are treated literally
+[source](https://realpython.com/python-f-strings/) [source](https://www.geeksforgeeks.org/formatted-string-literals-f-strings-python/)
+>
+Also called “formatted string literals,” f-strings are string literals that have an f at the beginning and curly braces containing expressions that will be replaced with their values. fe:
+>
+```python
+answer = 456
+f"Your answer is "{answer}""
+```
 #### Name 4 iterable types in Python!
-list, tuple, string, dictionary, set
+1. list
+2. strings
+3. tuple
+4. dictonory
 #### What is the difference between list/set/dictionary comprehension and a generator expression in Python?
-generator: size of the object is smaller, type of resulting values: generator. cannot access an element by index.
-e.g. g = (n*2 for n in range(1000))
-both: can iterate over
+[source](https://www.geeksforgeeks.org/python-list-comprehensions-vs-generator-expressions/)
+>
+**List Comprehension**: _It is an elegant way of defining and creating a list. List Comprehension allows us to create a list using for loop with lesser code. What normally takes 3-4 lines of code, can be compressed into just a single line._
+```python
+  values = [ expression
+             for value in collection
+             <if condition> ]
+```
+```python
+a_dict = {key: value  for key, value in zip(list1, list2) if clause}
+```             
+>
+**Generator Expressions**: _similar to list comprehensions, but instead of creating a list and keeping the whole sequence in the memory, the generator generates the next element in demand and allows us to create a generator without the yield keyword._
+>
+```python
+genexpr = ('Hello' for i in range(3))
+```
+>
+>**List Comprehension vs Generator Expressions:**
+>
+>The generator yields one item at a time and generates item only when in demand. Whereas, in a list comprehension, Python reserves memory for the whole list. Thus we can say that the generator expressions are memory efficient than the lists.
+>
 #### Does the order of the function definitions matter in Python? Why?
-yes; Python can't find a name that just doesn't exist yet > e.g. row1: def print_sum(a,b):
-	print(sum_nums(a,b)) and sum_nums defined in row4 > name error
+Really, a python source code is a list of instructions from top of file to bottom. Instructions are executed in order.
 #### What does unpacking mean in Python?
-* > unpack the list >>all elements of it can be passed as different parameters
-e.g. def func(a, b, c, d):
-	print(a, b, c, d)
-lst = [1, 2, 3, 4]
-func(*lst)
->>> (1, 2, 3, 4)
-** for dicts
-> can give a list for args. in a func.
+[source](https://stackabuse.com/unpacking-in-python-beyond-parallel-assignment/)
+>
+Unpacking in Python refers to an operation that consists of assigning an iterable of values to a tuple (or list ) of variables in a single assignment statement. As a complement, the term packing can be used when we collect several values in a single variable using the iterable unpacking operator.
+```python
+a, b, c = 1, 2, 3  
+a, b, c = call_return_three()
+```
 #### What happens when you try to assign the result of a function which has no return statement to a variable in Python?
-you get none
+If there is no return statement (or just a return without an argument), an implicit **return None** is added to the end of a function.
 
 ## Software engineering
 
 ### Debugging
 
 #### What techniques can you use while debugging a program in Python?
-debugger, print, rubber duck >explain code line-by-line
+1. print
+2. debugger
+3. rubberduck _(explain code line-by-line)_
 #### What does step over, step into and step out mean while using the debugger?
-step over: step to the next
-step into: step into the func., step out: step out from the func.
+1. **step over**: _skip functions_
+2. **step into**: _by default the debugger skips over managed properties and fields, but the Step Into Specific command allows you to override this behavior._
+3. **step out**: _to step out the specific_
 #### How can you start to debug a program from a certain line using the debugger?
-put down a breakpoint to that line
+1. breakpoints
+2. Run to cursor
 
 ### Version control
 
 #### What are the advantages of using a version control system?
-it's a way of stroring informaton about changes in code > keep track of every modification to the code, including the person responsible for it and precise time
-#### What is the difference between the working directory, the staging area and the repository in git?
-working dir. >git add > staging area > git commit >repo
-working dir: where you currently working. if you not save sg you will lose it > 'untracked' area of git
-staging area: where git starts tracking and saving changes that occur in files
-repo: all of your checkpoints or commits. this area saves everything
-#### What are remote repositories in git?
-remote repo.s: versions of your project that are hosted on the internet or network somewhere
-#### Why does a merge conflict occur?
-git cannot automatically determinate what is correct beacuse: 2people have chaned the same lines in a file / A deleted a file while while B was modifying it / not start merging if git sees there are changes in the working dir or staging area of the current project >pending changes could be written over by the commits that are being merged
-#### Through what series of commands could you put a new file into a remote repository connected to your existing local repository?
-git add, git commit, git push
-#### What does it mean atomic commits and descriptive commit messages?
-atomic: one fix or feature
-descriptive: short 50 chars or less summary of changes; one blank line; a detailed explanatory text if neccessary(72 char)
-#### What’s the difference between git and GitHub?
-git: version control software
-github: git repo. hosting server which offers all the source code management provided in git. > where you upload your git repo.
+[source](https://www.git-tower.com/learn/git/ebook/en/command-line/basics/why-use-version-control)
+>
+1. _Collaboration_
+2. _Storing Versions (Properly)_
+3. _Restoring Previous Versions_
+4. _Understanding What Happened (commits)_
+5. _Backup_
 
+#### What is the difference between the working directory, the staging area and the repository in git?
+[source](http://archaeogeek.github.io/foss4gukdontbeafraid/git/stages.html) [source](https://medium.com/@lucasmaurer/git-gud-the-working-tree-staging-area-and-local-repo-a1f0f4822018)
+>
+[](https://camo.githubusercontent.com/805666f761f7fa28ea2622d278e45229060b53df/68747470733a2f2f6e65757261746873626f61742e626c6f672f706f73742f6769742d696e74726f2f66656174757265642e706e67)
+>
+#### What are remote repositories in git?
+[source](https://www.git-tower.com/learn/git/ebook/en/command-line/remote-repositories/introduction)
+>
+Only when it comes to sharing data with your teammates, a remote repo comes into play. Think of it like a "file server" that you use to exchange data with your colleagues.
+#### Why does a merge conflict occur?
+[source](https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts) [source](https://dzone.com/articles/merge-conflict-everything-you-need-to-know)
+>
+1. _Merge incoming changes from remote branch to the local branch_
+2. _Merge outgoing changes from local branch to the remote branch_
+3. _Merge changes in one local branch to another local branch_
+4. _Merge changes in one remote branch to another remote branch_
+#### Through what series of commands could you put a new file into a remote repository connected to your existing local repository?
+1. mv - move file to that repo
+2. git add - add to repo
+3. git commit
+4. git push
+#### What does it mean atomic commits and descriptive commit messages?
+Atomic commits, in short, are what they sound like: atomic. I feel like there’s basically three features a commit needs to have to be atomic:
+>
+1. _Every commit pertains to one fix or feature_
+2. _Don't break the build on any commit_
+3. _Purpose is clear from commit msges and description (descriptive commit messages)_
+>
+#### What’s the difference between git and GitHub?
+Git is a distributed **version control tool** that can manage a development project's source code history, while GitHub is a **cloud based platform** built around the Git tool.
 ## Software design
 
 ### Clean code
