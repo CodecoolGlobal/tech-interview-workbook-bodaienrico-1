@@ -360,99 +360,132 @@ Git is a distributed **version control tool** that can manage a development proj
 ### Clean code
 
 #### What does clean code mean?
-writing readable and sustainable code
-in the code there aren't: dead code; unneccesary or not used things, comments; func.s that do more than the name says; badly named func.s, var.s, etc; 
-DRY: don't repeat yourself
-naming things well, using naming conventions
-being consistent
-general rules: follow standars conventions; keep it simple stupid; leave the campground cleaner than you found it; always look for the root cause of a problem
-name things properly; DRY; SRP(single responsibility principle); write modular code; avoid global var.s; avoid too many indentation levels; avoid too long func.s; write self-documenting code
+[source](https://learn.code.cool/full-stack/#/../pages/general/clean-code), [source](https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29)
+>
+>
+Code is clean if it can be understood easily – by everyone on the team. Clean code can be read and enhanced by a developer other than its original author. With understandability comes readability, changeability, extensibility and maintainability.
+>
+>
 #### What steps do we usually do during a clean code refactoring?
-check for, rewrite/fix: 
-bad names
-bad formattings
-repeated codes
-long methods
-wrong comment usage
-dead code
-magic numbers
-
+>
+1. Bad naming
+2. Badly formatted code
+3. Repeated code
+4. Long method
+5. Wrong comment usage
+6. Dead code
+>
 ### Error handling
 
 #### What is exception handling?
-handling exceptions>an event which occurs during the execution of a program that disrupts the normal flow of the program instructions.
-when the script encounters a situation that it cannot cope > raises an exeption > it must be handled, else it terminates and quits
+>
+An exception is an error that happens during execution of a program. When that error occurs, Python generate an exception that can be handled, which avoids your program to crash.
+>
 #### What are the basics of exception handling in Python?
-try: block, except: statement, followed by a block of code
-syntax errors, runtime errors, logival errors
+>
+[source](https://www.pythonforbeginners.com/error-handling/exception-handling-in-python)
+>
+The error handling is done through the use of exceptions that are caught in try blocks and handled in except blocks. If an error is encountered, a try block code execution is stopped and transferred down to the except block.
+>
+In addition to using an except block after the try block, you can also use the finally block.
+>
+The code in the finally block will be executed regardless of whether an exception occurs.
+>
 #### In which case should we catch an exception? Why?
-if we know that a particular section of our program is likely to cause an error, so we can tell what to do when it happens instead of letting the error crash our program. We can intercept it, do sg about it and allow the program to continue
+>
+Exceptions are convenient in many ways for handling errors and special conditions in a program. When you think that you have a code which can produce an error then you can use exception handling.
+>
 #### What can/should we do with an exception in the ‘except’ block?
-a code which handles the problem as elegantly as possible
-e.g. except IOError: print('Error: cannot find file or read data')
+1. _printing the problem in an elgegant way_
+2. _quit the program if need it_
 #### What does the else and finally statement do in a try-except block in Python?
-else:optional, when present must follow all except clauses. useful for code that must be executed if the try clause does not raise exception
-finally: optional, define clean-up actions that must be executed under all circumstances. the finally clause execute as the last task before the try statement completes. it runs whether or not the try statement produces an exeption
-
+>
+**else block** will be executed only if the code inside the try block doesn’t generate an exception.
+>
+**finally block** code is always executed, whether the program executed properly or it raised an exception.
+>
 ## Software Development Methodologies
 
 #### What is the main goal of a retrospective meeting?
-to evaulate the past working cycle and define actions that may fix or improve things identified as negative
-
+>
+The goal of the retrospective is for the team members to discuss among themselves about how the work went during the last sprint so that better ways can be found to meet the project's goals.
+>
 ## Programming environment
 
-### Unix
+### Unix (Unix stands for Uniplexed Information and Computer Systems)
 
 #### What is UNIX and what is Linux?
-Unix: operating system, written in C. Allows quick modification, acceptance and portability. Proprietary operating system. Works on CLI (Command Line Interface). created in the late 1960s at AT&T Bell Labs.
-Linux: operating system. Software which enables applications and the users to access the devices on the computer to perform some specific function. Linux OS relays instructions from an application from the computer's processor and sends the result back to the application via the Linus OS. Free and open source software collaboration. Built by Linus Torvalds at the University of Helsinki in 1991.
-
-difference: 
-Linux-Open Source <>Unix: the versions primarily developed by AT&T, 
-Linux: portable and is booted from a USB Stick <> Unix: not portable, 
-Linux:OS can be installed on various types of devices like mobile, tablet, computers <> Unix: OS is used for inernet servers, workstations & PCs
-Linux: the source code is aviable to the general public <> Unix: source code is not aviable to anyone
--> Linux:source code is aviable to the general public <> Unix: source code is proprietary
-Linux is a clone of Unix
-Linux default shell is BASH <> Unix shell is Bourne Shell
-Linux threat detection and solution are very fast <> Unix users require longer wait times to get the proper bug fixing patch
-Important versions of Linux:Redhat, Ubuntu, OpenSuse, Solaris <> Unix: HP-UX, AIS, BSD, etc.
+>
+[sournc](https://www.guru99.com/difference-unix-vs-linux.html)
+>
+**Unix**: The UNIX can be used in internet servers, workstations, and PCs. **Linux**: Everyone. From home users to developers and computer enthusiasts alike. Linux OS can be installed on various types of devices like mobile, tablet computers.
+>
 #### What do we call the shell in Linux?
-is a program that takes commands from the keyboard and gives them to the operating system to perform. Command line interface(CLIs). On most Linux systems a program called BASH acts as the shell program. other shell programs:ksh, tcsh, zsh
+>
+The shell is the **command interpretor** in an operating system such as Unix or GNU/Linux, it is a program that executes other programs. It provides a computer user an interface to the Unix/GNU Linux system so that the user can run different commands or utilities/tools with some input data.
+>
 #### What does root means in a Linux environment?
-root: the user name or account that by default has access to all commands and files on a Linux OS. Also referred as the root account, root user and superuser.
+>
+root is the user name or account that by default has access to all commands and files on a Linux or other Unix-like operating system. It is also referred to as the **root account, root user and the superuser**.
+>
 #### How do you access your personal files in Linux?
+>
+home/username in terminal
+>
 #### How can you install an application in Linux?
-sudo apt install appname(e.g. inkspace) in Ububtu
-Fedora:instead of apt> dnf; OpenSUSE: yzpper; Debian: apt; Slackware: sbopkg; FreeBSD: pkg_add; OpenIndiana: pkg
-(sudo apt search e.g.pyqt > sudo apt install e.g.python-qt5)
+>
+sudo apt install debname
+>
 #### What is package management in Linux, what are repositories?
-apt:(advanced packaging tool); > installing, upgrading software packages, updading of the package list index, upgradging the entire Ubuntu system
-e.g.: sudo apt install nmap > install nmap package; sudo apt remove nmap > remove nmap package; sudo apt update >update package index; sudo apt upgrade > upgrade packages
-repo.s: collection of packages found online or on physical media
+>
+[source](https://www.linode.com/docs/tools-reference/linux-package-management/)
+>
+A package manager or package-management system is a collection of software tools that automates the process of installing, upgrading, configuring, and removing computer programs for a computer's operating system in a consistent manner.
+>
+The Debian package management system, based on a tool called dpkg with the very popular apt system, is a powerful, popular, and useful method of package management.
+>
 #### How do you navigate in the filesystem with the command line?
-pwd:>print working directory. show which dir. you're located 
-ls: list files in current dir.
-cd: change dir.s. 
-cd/ navigate into the root dir.
-cd or cd~ navigate to home dir.
-cd .. navigate up one dir. level
-cd - navigate to the previous dir.
-mv: move a file to a different location or rename a file
+>
+1. pwd: find your “present working directory”
+2. ls: see the files in your current directory
+3. cd: change your current directory
+    i. To navigate into the root directory, use cd /
+    ii. To navigate to your home directory, use cd or cd~
+    iii. To navigate up one directory level, use cd ..
+    iv. To navigate to the previous directory (or back), use cd -
+>    
 #### What does the following commands do: mkdir, rm, cat, cp, touch?
-mkdir: make directories
-rm: remove files or directories
-cat: concatenate and print files / create the file with content
-cp: copy files and directories
-touch: create file without any content. > empty file
+>
+[source](https://www.softwaretestinghelp.com/unix-file-system-commands/)
+>
+1. **mkdir**: Make directory
+2. **rm**: Remove files and directories ```python rm -r (recursive) -f (force) file_or_dir_name```. It is useful, when you wanna remove a non-empty directory.
+3. **cat**: Concatenate files and print to stdout.
+4. **cp**: Copy files
+5. **touch**: Create a new file or update its timestamp.
+>
 #### How can you look up what does a command do in Linux if you have no internet connectionli?
-man page > man man
+>
+commandname -help or commandname -h man commandname
+>
 #### What does the following commands do: head, tail, more, less?
-head: print the top N number of data of the given input.  by default - first 10 lines
-tail: output the last part of files
-more: file perusal filter for crt viewing. filter for paging text one screenful at a time
-less: opposite of more. 
-#### How do s download a file from internet using the terminal?
-wget "copy_url_here"
-wget -P location "url">> downloed to the current dir.
-wget -O location/NewFileName "url">> download to desktop
+>
+[source](https://linuxfrombeginning.wordpress.com/2008/09/19/linux/)
+>
+**head**: displays the first ten lines of a file, unless otherwise stated.
+**tail**: display the last part of the file
+**more**: to view a text file one page at a time, press spacebar to go to the next page
+**less**: is much the same as more command
+>
+#### How do you download a file from internet using the terminal?
+>
+1. **with curl**:
+    1. sudo apt install curl
+    2. curl –O [URL]
+    3. curl –o [filename] [URL] # save with diffrent filename
+    4. curl -O [URL1] -O [URL2]
+2. **with wget**:
+    1. sudo apt-get install wget
+    2. wget [URL]
+    3. wget -O [filename] [URL]
+    4. wget –i [filename.txt]
